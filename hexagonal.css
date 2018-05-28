@@ -1,0 +1,110 @@
+:root {
+    --accent-color: #34acc8;
+    --text-color: #154651;
+}
+
+*,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Garamond', "Georgia", serif;
+    font-size: 24px;
+    color: var(--text-color);
+    margin: 0;
+    padding: 5vw;
+    border: 1vw solid var(--accent-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    max-width: 60ch;
+    margin-top: 0;
+    line-height: 1.6;
+    margin-bottom: 2em;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+a:before {
+    display: block;
+    content: '';
+    background-color: var(--accent-color);
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    width: 1em;
+    bottom: 0.1em;
+    z-index: -1;
+    height: 0.1em;
+}
+
+a:hover:before {
+    width: 100%;
+    bottom: 0.3em;
+    height: 0.3em;
+    transition: width 200ms ease-out, bottom 200ms ease-out;
+}
+
+section {
+    margin-bottom: 5vw;
+}
+footer {
+    margin-top: auto;
+}
+
+.hexagon-wrapper {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(21deg);
+    transition: transform 700ms ease-in-out;
+}
+.hexagon-wrapper:hover {
+    transform: rotate(201deg);
+}
+
+.hexagon {
+    position: relative;
+    width: 36px;
+    height: 20.78px;
+    background-color: #feffff;
+    margin: 10.39px 0;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 10.39px solid #feffff;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 10.39px solid #feffff;
+  }
